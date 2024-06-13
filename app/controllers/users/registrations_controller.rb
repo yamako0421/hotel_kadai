@@ -3,12 +3,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  # If you have extra params to permit, append them to the sanitizer.
+  # ユーザー登録時、下記も同時に登録.
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :full_name, :introduction])
   end
 
-  # Override Devise method for updating resource without password
+  # パスワードなしで登録可能
   def update_resource(resource, params)
     resource.update_with_password(params)
   end
