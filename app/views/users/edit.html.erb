@@ -1,0 +1,31 @@
+<h2>プロフィール編集</h2>
+
+<%= form_for(@user, url: user_path(@user), html: { method: :patch }) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :アイコン画像 %>
+  <%= f.file_field :avatar %><br><br>
+
+  <%= f.label :名前 %>
+  <%= f.text_field :full_name %><br><br>
+
+  <%= f.label :自己紹介 %>
+  <%= f.text_area :introduction %><br><br>
+
+  <%= f.submit '更新' %><br>
+  <%= link_to "キャンセル", :back %>
+
+<% end %>
+
+
+

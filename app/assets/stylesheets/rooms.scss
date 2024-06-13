@@ -1,0 +1,55 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+table th {
+    padding: 10px 10px;
+    width: 500px;
+    border-bottom-width: 1px;
+}
+
+table td {
+    border-bottom-width: 1px;
+    font-size: 10px;
+    
+}
+
+.room_image{
+    width: 120px;
+}
+
+.room_name{
+    width: 5px;
+}
+
+.room_description{
+    width: 200px;
+}
+
+.room_price{
+    width: 50px;
+}
+
+.room_date{
+    width: 50px;   
+}
+
+.text_field{
+    width: 300px; 
+    top: 10px;
+}
+
+.row{
+    padding: 30px 30px;  
+}
+
+.RoomDetails__image{
+    width: auto;
+    padding: 10px 10px;
+}
+
+.button{
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+}

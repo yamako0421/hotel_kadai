@@ -1,0 +1,26 @@
+<h1>予約一覧ページ</h1>
+<% if @reservations.present? %>
+  <% @reservations.each do |reservation| %>
+    <div class="reservation">
+      <div class="col-md-6">
+        <!-- 施設画像 -->
+        <% if reservation.room.image.attached? %>
+          <%= image_tag reservation.room.image, alt: "Room image", class: "room_image" %>
+        <% else %>
+          <%= image_tag "default-image.png", alt: "Default room image", class: "room_image" %>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <!-- 施設情報 -->
+        <p>施設名: <%= reservation.room.name %></p>
+        <p>説明: <%= reservation.room.description %></p>
+        <p>チェックイン日: <%= reservation.check_in_date.strftime("%Y/%m/%d") %></p>
+        <p>チェックアウト日: <%= reservation.check_out_date.strftime("%Y/%m/%d") %></p>
+        <p>合計金額: <%= reservation.total_amount %></p>
+        <p>予約日: <%= reservation.created_at.to_s(:datetime_jp)%></p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>予約はありません。</p>
+<% end %>

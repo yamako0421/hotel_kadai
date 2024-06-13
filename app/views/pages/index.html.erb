@@ -1,0 +1,11 @@
+<h1>
+Potepan Shareで<br>
+まだ体験したことのない<br>
+旅をしよう</h1>
+
+
+
+<%= form_tag(search_rooms_path, method: :get) do %>
+<%= text_field_tag :area, params[:area], placeholder: "エリアを入力してください", class: "text_field"  %>
+<%= submit_tag "検索" %>
+<% end %>

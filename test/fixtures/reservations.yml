@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  check_in_date: 2024-05-19
+  check_out_date: 2024-05-19
+  total_nights: MyString
+  num_of_guests: 1
+  total_amount: 1
+
+two:
+  check_in_date: 2024-05-19
+  check_out_date: 2024-05-19
+  total_nights: MyString
+  num_of_guests: 1
+  total_amount: 1
