@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-   root to: 'pages#index'
-   devise_for :users, controllers: {
+  root to: 'pages#index'
+  
+  devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  
   resources :users
   resources :reservations
   resources :rooms do
@@ -10,4 +12,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
- end
+
+  # ActiveStorageのルートをマウント
+Rails.application.routes.draw do
+  mount ActiveStorage::Engine => '/rails/active_storage'
+end
+end
