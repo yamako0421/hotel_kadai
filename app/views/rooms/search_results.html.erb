@@ -1,0 +1,33 @@
+<p>検索結果: <%= @rooms.present? ? @rooms.count : 0 %>件</p>
+
+<% if @rooms.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th>施設名</th>
+        <th>住所</th>
+        <th>紹介文</th>
+        <th>料金</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <% if room.image.attached? %>
+          <td><%= image_tag room.image, alt: "Room image", class: "room_image" %></td>
+        <% else %>
+          <td><%= image_tag "default-image.png", alt: "Default room image", class: "room_image" %></td>
+        <% end %>
+          <td class="room_name"><%= link_to room.name, room_path(room) %></td>
+          <td class="room_address"><%= room.address %></td>
+          <td class="room_description"><%= room.description %></td>
+          <td class="room_price"><%= room.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+

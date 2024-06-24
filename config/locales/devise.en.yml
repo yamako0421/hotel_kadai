@@ -1,0 +1,37 @@
+ja:
+  errors:
+    messages:
+      not_saved:
+        one: "1件のエラーが発生したため、%{resource}は保存されませんでした"
+        other: "%{count}件のエラーが発生したため、%{resource}は保存されませんでした"
+  devise:
+    failure:
+      unauthenticated: 'ログインしてください。'
+      unconfirmed: 'メールアドレスの確認が必要です。'
+      locked: 'アカウントがロックされています。'
+      invalid: '無効な%{authentication_keys}またはパスワードです。'
+      last_attempt: 'あと1回ログインに失敗するとアカウントがロックされます。'
+      already_authenticated: 'すでにログインしています。'
+    registrations:
+      signed_up: 'アカウント登録が完了しました。'
+      signed_up_but_unconfirmed: 'アカウント登録が完了しました。続けるには、アカウントの確認が必要です。メールを確認してください。'
+      signed_up_but_inactive: 'アカウント登録が完了しました。続けるには、アカウントの有効化が必要です。'
+      updated: 'アカウント情報を更新しました。'
+      destroyed: 'アカウントを削除しました。'
+    sessions:
+      signed_in: 'ログインしました。'
+      signed_out: 'ログアウトしました。'
+    passwords:
+      send_instructions: 'パスワード再設定の案内をメールで送りました。'
+      updated: 'パスワードが変更されました。'
+    mailer:
+      confirmation_instructions:
+        subject: 'アカウントの確認'
+      reset_password_instructions:
+        subject: 'パスワード再設定のご案内'
+      unlock_instructions:
+        subject: 'アカウントロック解除のご案内'
+      email_changed:
+        subject: 'メールアドレス変更のご案内'
+      password_change:
+        subject: 'パスワード変更のご案内'

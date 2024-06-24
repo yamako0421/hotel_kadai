@@ -1,0 +1,15 @@
+<h1>予約の内容確認</h1>
+<p>チェックイン日: <%= @reservation.check_in_date.strftime("%Y/%m/%d") %></p>
+<p>チェックアウト日: <%= @reservation.check_out_date.strftime("%Y/%m/%d") %></p>
+<p>人数: <%= @reservation.num_of_guests %></p>
+<p>合計金額: <%= @reservation.total_amount %></p>
+
+<p>上記内容で正しければ「確定」ボタンを押してください。</p>
+<%= form_for @reservation, url: reservation_path(@reservation), method: :patch do |f| %>
+  <%= f.hidden_field :room_id %>
+  <%= f.hidden_field :check_in_date %>
+  <%= f.hidden_field :check_out_date %>
+  <%= f.hidden_field :num_of_guests %>
+  <%= f.submit "確定", class: "btn btn-primary" %>
+<% end %>
+<p><%= link_to "キャンセル", :back %></p>

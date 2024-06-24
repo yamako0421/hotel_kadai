@@ -1,0 +1,39 @@
+<h2>新規登録</h2>
+
+
+<%= render "shared/error", obj: @room %> 
+    
+<%= form_with model: @room, local: true do |form| %>
+
+
+  <table>
+    <tr>
+      <th><%= form.label :name ,"施設名" %></th>
+      <td><%= form.text_field :name , placeholder: "ルーム名を入力"%></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :description ,"施設詳細" %></th>
+      <td><%= form.text_area :description,size: "40x10", placeholder: "施設詳細を入力"%></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :price ,"料金" %></th>
+      <td><%= form.text_field :price, placeholder: "一日あたりの料金を入力" %></td>
+    </tr>
+
+    <tr>
+    <th><%= form.label :address ,"住所" %></th>
+    <td><%= form.text_field :address, placeholder: "住所を入力" %></td>
+    </tr>
+
+    <tr>
+    <th><%= form.label :image, "施設画像" %></th>
+    <td><%= form.file_field :image %></td>
+    </tr>
+  </table>
+
+  <%= form.submit "保存" %>
+
+  <p><%= link_to "キャンセル", rooms_path %></p> <!-- 直前のページへ戻るリンク -->
+  <% end %>
