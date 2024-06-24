@@ -1,6 +1,6 @@
 <h2>プロフィール編集</h2>
 
-<%= form_for(@user, url: user_path(@user), html: { method: :patch }) do |f| %>
+<%= form_for(@user, url: user_path(@user), html: { method: :patch, multipart: true }) do |f| %> 
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>

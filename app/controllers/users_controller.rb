@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_current_user, only: [:index, :edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -44,6 +45,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_current_user
+    if user_signed_in?
+      @user = current_user
+    end
+  end
 
   def user_params
     params.require(:user).permit(:avatar, :full_name, :introduction)

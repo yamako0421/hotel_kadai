@@ -7,14 +7,14 @@
 
     <% if user_signed_in? %>
     <!-- ログインしているユーザー向けの表示 -->
-    <div class="user-info">
-  <% if @user.present? && @user.avatar.attached? %>
-    <%= image_tag @user.avatar, class: "user_logo" %>
-  <% else %>
-    <%= image_tag "default_avatar.png", class: "user_logo" %>
-  <% end %>
-   </div>
-
+    <div class="user-info" data-turbolinks-permanent>
+    <% if current_user.present? && current_user.avatar.attached? %>
+      <%= image_tag rails_blob_path(current_user.avatar, only_path: true), class: "user_logo" %>
+    <% else %>
+      <%= image_tag "default_avatar.png", class: "user_logo" %>
+    <% end %>
+  </div>
+  
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <%= current_user.full_name %>
