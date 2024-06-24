@@ -1,3 +1,55 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.FirstView {
+    padding-bottom: 50px;
+}
+
+.RecommendAreaSection__title {
+    border-bottom: 3px solid #ff7757;
+    width: fit-content;
+    
+}
+
+.search-image{
+    width: 200px;
+    background-size: cover;
+    justify-content: space-between;
+}
+
+.RecommendAreas{
+    padding-top: 50px;
+}
+
+.images-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 10px; 
+  }
+  
+  .image-container {
+    position: relative;
+    width: 23%; 
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .text-overlay p {
+    margin: 0;
+    font-size: 1.5em; 
+  }
+  

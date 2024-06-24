@@ -1,11 +1,64 @@
-<h1>
+<div class = "FirstView">
+ <section class="container">
+ <h1 class="FirstView__title">
 Potepan Shareで<br>
 まだ体験したことのない<br>
 旅をしよう</h1>
 
-
-
+<div class="FirstViewSearch">
 <%= form_tag(search_rooms_path, method: :get) do %>
 <%= text_field_tag :area, params[:area], placeholder: "エリアを入力してください", class: "text_field"  %>
 <%= submit_tag "検索" %>
 <% end %>
+
+</div>
+</section>
+</div>
+
+<div class ="container_1">
+ <section class ="RecommendAreaSection">
+  <h2 class ="RecommendAreaSection__title">おすすめのエリア</h2>
+   <div class ="RecommendAreas">
+   <div class="images-row">
+   <div class="image-container">
+     <%= link_to search_rooms_path(area: "東京"), method: :get do %>
+       <img src="<%= asset_path 'tokyo.jpeg' %>" alt="Tokyo" class="image">
+       <div class="text-overlay">
+         <p>東京</p>
+         <p>Tokyo</p>
+       </div>
+     <% end %>
+   </div>
+   <div class="image-container">
+     <%= link_to search_rooms_path(area: "大阪"), method: :get do %>
+       <img src="<%= asset_path 'osaka.jpeg' %>" alt="Osaka" class="image">
+       <div class="text-overlay">
+         <p>大阪</p>
+         <p>Osaka</p>
+       </div>
+     <% end %>
+   </div>
+   <div class="image-container">
+     <%= link_to search_rooms_path(area: "京都"), method: :get do %>
+       <img src="<%= asset_path 'kyoto.jpeg' %>" alt="Kyoto" class="image">
+       <div class="text-overlay">
+         <p>京都</p>
+         <p>Kyoto</p>
+       </div>
+     <% end %>
+   </div>
+   <div class="image-container">
+     <%= link_to search_rooms_path(area: "札幌"), method: :get do %>
+       <img src="<%= asset_path 'sapporo.jpeg' %>" alt="Fukuoka" class="image">
+       <div class="text-overlay">
+         <p>札幌</p>
+         <p>Sapporo</p>
+       </div>
+   </div>
+ </div>
+ 
+</div>
+</section>
+</div>
+<% end %>
+
